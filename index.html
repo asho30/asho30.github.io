@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ahmed Ashour · Senior SDET</title>
+<meta name="description" content="Ahmed Ashour Hussein — Senior SDET & QA Lead. Playwright, Playwright MCP, LLM agents in QA and testing AI systems. 12+ years in quality engineering.">
+<meta property="og:title" content="Ahmed Ashour · Senior SDET & QA Lead">
+<meta property="og:description" content="AI-augmented test automation with Playwright, Playwright MCP and DeepEval. 12+ years in quality engineering.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0f17'/%3E%3Cpath d='M18 33l9 9 19-20' stroke='%2322d3ee' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0f17; --bg-2:#111827; --card:#131a26; --line:#1f2a3a;
+  --text:#e6edf6; --muted:#93a1b5; --dim:#5f6e83;
+  --accent:#22d3ee; --accent-2:#a78bfa; --ok:#34d399;
+  --grad:linear-gradient(120deg,var(--accent),var(--accent-2));
+  --radius:16px; --max:1120px;
+  --mono:'JetBrains Mono',ui-monospace,Consolas,monospace;
+  color-scheme:dark;
+}
+:root[data-theme="light"]{
+  --bg:#f7f9fc; --bg-2:#eef2f8; --card:#ffffff; --line:#dde4ee;
+  --text:#0f172a; --muted:#475569; --dim:#64748b;
+  --accent:#0891b2; --accent-2:#7c3aed; --ok:#059669;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    --bg:#f7f9fc; --bg-2:#eef2f8; --card:#ffffff; --line:#dde4ee;
+    --text:#0f172a; --muted:#475569; --dim:#64748b;
+    --accent:#0891b2; --accent-2:#7c3aed; --ok:#059669;
+    color-scheme:light;
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.mono{font-family:var(--mono)}
+.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* nav */
+nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 78%,transparent);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{font-weight:800;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
+.logo i{width:30px;height:30px;border-radius:9px;background:var(--grad);display:grid;place-items:center;font-style:normal;color:#0b0f17;font-size:14px;font-weight:800}
+.links{display:flex;gap:26px;font-size:14px;color:var(--muted)}
+.links a:hover{color:var(--text)}
+.nav-r{display:flex;gap:10px;align-items:center}
+.icon-btn{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--text);display:grid;place-items:center;cursor:pointer}
+.icon-btn:hover{border-color:var(--accent)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:12px;font-weight:600;font-size:15px;border:1px solid var(--line);background:var(--card);transition:.2s}
+.btn:hover{border-color:var(--accent);transform:translateY(-1px)}
+.btn.primary{background:var(--grad);color:#0b0f17;border:0}
+.btn.primary:hover{filter:brightness(1.08)}
+
+/* hero */
+.hero{position:relative;padding:96px 0 80px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-30% -10% auto auto;width:720px;height:720px;background:radial-gradient(closest-side,color-mix(in srgb,var(--accent-2) 28%,transparent),transparent);filter:blur(30px);pointer-events:none}
+.hero::after{content:"";position:absolute;inset:auto auto -40% -15%;width:620px;height:620px;background:radial-gradient(closest-side,color-mix(in srgb,var(--accent) 22%,transparent),transparent);filter:blur(30px);pointer-events:none}
+.grid-bg{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse at 50% 30%,#000 20%,transparent 70%);opacity:.45;pointer-events:none}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;font-size:13px;color:var(--muted);background:var(--card)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 4px color-mix(in srgb,var(--ok) 25%,transparent);animation:pulse 2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 8px transparent}}
+h1{font-size:clamp(40px,6vw,68px);line-height:1.04;letter-spacing:-.035em;font-weight:800;margin:22px 0 18px}
+.role{font-size:clamp(18px,2.2vw,22px);color:var(--muted);margin-bottom:28px;max-width:560px}
+.role b{color:var(--text);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.stats{display:flex;gap:36px;margin-top:44px;flex-wrap:wrap}
+.stat b{display:block;font-size:30px;font-weight:800;letter-spacing:-.03em}
+.stat span{font-size:13px;color:var(--dim)}
+
+/* code card */
+.code{background:#0d1320;border:1px solid #1f2a3a;border-radius:var(--radius);box-shadow:0 30px 80px -30px rgba(0,0,0,.6);overflow:hidden;font-family:var(--mono);font-size:12.2px;line-height:1.75;color:#cbd5e1}
+.code-top{display:flex;align-items:center;gap:7px;padding:12px 16px;border-bottom:1px solid #1f2a3a;background:#0a0f1a}
+.code-top i{width:11px;height:11px;border-radius:50%;background:#334155}
+.code-top i:nth-child(1){background:#f87171}.code-top i:nth-child(2){background:#fbbf24}.code-top i:nth-child(3){background:#34d399}
+.code-top span{margin-left:10px;color:#64748b;font-size:12px}
+.code pre{padding:18px 20px;overflow-x:auto;white-space:pre}
+.k{color:#c084fc}.s{color:#86efac}.f{color:#67e8f9}.c{color:#64748b}.n{color:#fbbf24}
+.run{border-top:1px solid #1f2a3a;padding:12px 20px;color:#34d399;font-size:12.5px;display:flex;justify-content:space-between}
+.run span{color:#64748b}
+
+/* sections */
+section{padding:92px 0}
+section.alt{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.eyebrow{font-family:var(--mono);font-size:13px;color:var(--accent);letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px}
+h2{font-size:clamp(30px,4vw,42px);letter-spacing:-.03em;line-height:1.12;margin-bottom:16px}
+.lead{color:var(--muted);max-width:680px;font-size:17px}
+.head{margin-bottom:48px}
+
+
+/* intro video */
+.video{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:0 40px 100px -40px rgba(0,0,0,.6);background:#070b13;aspect-ratio:16/9}
+.video video{display:block;width:100%;height:100%}
+
+/* about */
+.about{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:start}
+.about p{color:var(--muted);margin-bottom:16px;font-size:17px}
+.about p b{color:var(--text)}
+.facts{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:8px 24px}
+.facts div{display:flex;justify-content:space-between;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+.facts div:last-child{border:0}
+.facts span{color:var(--dim)}
+.facts b{font-weight:600;text-align:right}
+
+/* timeline */
+.tl{position:relative;padding-left:32px}
+.tl::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--accent),var(--accent-2),transparent)}
+.job{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px 28px;margin-bottom:20px}
+.job::before{content:"";position:absolute;left:-32px;top:30px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+.job.now::before{background:var(--accent);box-shadow:0 0 0 6px color-mix(in srgb,var(--accent) 22%,transparent)}
+.job-h{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:baseline}
+.job h3{font-size:20px;letter-spacing:-.01em}
+.when{font-family:var(--mono);font-size:13px;color:var(--accent)}
+.org{color:var(--muted);font-size:14.5px;margin:2px 0 14px}
+.job ul{list-style:none;display:grid;gap:8px}
+.job li{color:var(--muted);font-size:15px;padding-left:20px;position:relative}
+.job li::before{content:"▹";position:absolute;left:0;color:var(--accent)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font-family:var(--mono);font-size:12px;padding:4px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);background:var(--bg)}
+
+/* projects */
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.proj{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;transition:.25s}
+.proj:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--accent-2) 55%,var(--line))}
+.proj .cat{font-family:var(--mono);font-size:12px;color:var(--accent-2);margin-bottom:10px}
+.proj h3{font-size:18px;margin-bottom:10px}
+.proj p{color:var(--muted);font-size:14.5px;flex:1}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.sk{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.sk h3{font-size:15px;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.sk h3::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--grad)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:13.5px;padding:6px 12px;border-radius:10px;background:var(--bg);border:1px solid var(--line)}
+
+/* principles */
+.princ{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.pr{padding:28px;border-radius:var(--radius);border:1px solid var(--line);background:var(--card)}
+.pr .num{font-family:var(--mono);font-size:13px;color:var(--dim)}
+.pr h3{font-size:20px;margin:10px 0 8px;letter-spacing:-.01em}
+.pr p{color:var(--muted);font-size:15px}
+
+/* certs */
+.two{display:grid;grid-template-columns:1.3fr .7fr;gap:32px}
+.certs{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.cert{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.cert b{display:block;font-size:15px;margin-bottom:4px}
+.cert span{font-size:13px;color:var(--dim)}
+.edu{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+.edu h3{font-size:18px;margin-bottom:6px}
+.edu p{color:var(--muted);font-size:14.5px;margin-bottom:6px}
+
+/* contact */
+.contact{text-align:center;padding:110px 0}
+.contact h2{font-size:clamp(34px,5vw,54px)}
+.contact .lead{margin:0 auto 34px}
+.contact .cta{justify-content:center}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--dim);font-size:13.5px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:960px){
+  .hero .wrap,.about,.two{grid-template-columns:1fr}
+  .projects,.skills,.princ{grid-template-columns:repeat(2,1fr)}
+  .links{display:none}
+}
+@media (max-width:600px){
+  .wrap{padding:0 16px}
+  .hero{padding:64px 0 56px}
+  section{padding:68px 0}
+  .projects,.skills,.princ,.certs{grid-template-columns:1fr}
+  .stats{gap:24px}
+  .code{font-size:11.5px}
+  .job{padding:22px 20px}
+  .tl{padding-left:24px}.job::before{left:-24px}.tl::before{left:3px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#top" class="logo"><i>AA</i>Ahmed Ashour</a>
+    <div class="links">
+      <a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+    </div>
+    <div class="nav-r">
+      <button class="icon-btn" id="theme" aria-label="Toggle theme" title="Toggle theme">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+      <a class="btn primary" href="assets/Ahmed_Ashour_CV.pdf" download style="padding:9px 16px;font-size:14px">Download CV</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="grid-bg"></div>
+  <div class="wrap">
+    <div>
+      <span class="badge"><span class="dot"></span>Open to Senior SDET &amp; QA Lead roles</span>
+      <h1>Quality engineering,<br><span class="grad-text">augmented by AI.</span></h1>
+      <p class="role">I'm <b>Ahmed Ashour Hussein</b>, a Senior SDET and QA Lead. I build Playwright automation teams trust, and I use LLM agents across the testing lifecycle, with engineers making every quality call.</p>
+      <div class="cta">
+        <a class="btn primary" href="#contact">Get in touch →</a>
+        <a class="btn" href="https://www.linkedin.com/in/aashour" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          LinkedIn</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b class="grad-text">12+</b><span>years in quality</span></div>
+        <div class="stat"><b class="grad-text">6</b><span>industries shipped</span></div>
+        <div class="stat"><b class="grad-text">3</b><span>countries rolled out</span></div>
+      </div>
+    </div>
+    <div class="code rv">
+      <div class="code-top"><i></i><i></i><i></i><span>tests/inbound.spec.ts</span></div>
+<pre><span class="c">// generated by an MCP agent, reviewed by a human</span>
+<span class="k">import</span> { test, expect } <span class="k">from</span> <span class="s">'./fixtures'</span>;
+
+<span class="f">test</span>(<span class="s">'merchant submits an inbound'</span>, <span class="k">async</span> ({ portal }) => {
+  <span class="k">await</span> portal.inbounds.<span class="f">create</span>({ warehouse: <span class="s">'RUH-1'</span> });
+  <span class="k">await</span> portal.inbounds.<span class="f">addSku</span>(<span class="s">'SKU-1042'</span>, <span class="n">120</span>);
+  <span class="k">await</span> portal.inbounds.<span class="f">submit</span>();
+
+  <span class="k">await</span> <span class="f">expect</span>(portal.page.<span class="f">getByRole</span>(<span class="s">'status'</span>))
+    .<span class="f">toHaveText</span>(<span class="s">'Submitted'</span>);
+});</pre>
+      <div class="run"><b>✓ 1 passed</b><span>chromium · 2.4s · trace saved</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="intro" style="padding-top:0">
+  <div class="wrap">
+    <div class="video rv">
+      <video controls preload="none" playsinline poster="assets/video-poster.jpg">
+        <source src="assets/portfolio-intro.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+
+
+<section id="about">
+  <div class="wrap about">
+    <div class="rv">
+      <p class="eyebrow">About</p>
+      <h2>From POS terminals to AI agents</h2>
+      <p>I'm a QA Lead and Senior SDET with <b>12+ years</b> across web, mobile, API, embedded and payment systems. I started out developing and testing embedded payment apps for national subsidy programmes, moved through smart-meter validation and enterprise automation, and now lead quality for a <b>B2B logistics platform</b>.</p>
+      <p>These days I put <b>AI agents to work across the testing lifecycle</b>: Playwright MCP-driven exploration and test generation, LLM-assisted test design and failure triage. Engineers stay in control of every quality decision.</p>
+    </div>
+    <div class="facts rv">
+      <div><span>Based in</span><b>Giza, Egypt</b></div>
+      <div><span>Currently</span><b>QA Lead · Sirdab</b></div>
+      <div><span>Core stack</span><b>Playwright · TypeScript</b></div>
+      <div><span>Certified</span><b>ISTQB · Agile · PMP trained</b></div>
+      <div><span>Languages</span><b>Arabic · English</b></div>
+      <div><span>Degree</span><b>B.Sc. Comms &amp; Electronics</b></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="alt">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="eyebrow">Experience</p>
+      <h2>Where I've worked</h2>
+    </div>
+    <div class="tl">
+      <article class="job now rv">
+        <div class="job-h"><h3>QA Lead</h3><span class="when">Aug 2024 — Present</span></div>
+        <p class="org">Sirdab · B2B logistics &amp; fulfillment platform</p>
+        <ul>
+          <li>Lead quality for the merchant portal, orders, SKUs &amp; inventory, inbound/outbound shipments, warehouse capacity, quotes and e-commerce integrations.</li>
+          <li>Built and own the Playwright (TypeScript) framework: POM, custom fixtures, UI + API layers, parallel runs and trace/video reporting in CI on every release.</li>
+          <li>Connected Playwright MCP to LLM agents (Claude, GitHub Copilot) to explore new features, draft scenarios from user stories and generate specs that engineers review before merging.</li>
+          <li>Defined the QA strategy, risk-based test plans and release gates for multi-step business flows and data integrity across integrations.</li>
+          <li>Coach the team on Playwright, prompt engineering for QA and human-in-the-loop review of AI-generated tests.</li>
+        </ul>
+        <div class="tags"><span class="tag">Playwright</span><span class="tag">Playwright MCP</span><span class="tag">TypeScript</span><span class="tag">Claude / Copilot</span><span class="tag">API testing</span><span class="tag">CI/CD</span></div>
+      </article>
+      <article class="job rv">
+        <div class="job-h"><h3>Automation QA Engineer</h3><span class="when">Jan 2022 — Jul 2024</span></div>
+        <p class="org">Alef Education · Remote, Abu Dhabi · K-12 EdTech</p>
+        <ul>
+          <li>Automated regression suites for large-scale digital-learning web apps with Cypress (JavaScript).</li>
+          <li>Wrote test plans and test cases covering functional, UI and usability quality across several platforms.</li>
+          <li>Rolled out an automated bug-tracking process that surfaced issues earlier and cut deadline slips caused by QA.</li>
+        </ul>
+        <div class="tags"><span class="tag">Cypress</span><span class="tag">JavaScript</span><span class="tag">Test planning</span></div>
+      </article>
+      <article class="job rv">
+        <div class="job-h"><h3>Lead Test Automation Engineer L1</h3><span class="when">Mar 2020 — Jan 2022</span></div>
+        <p class="org">ITWorx · Cairo · Software services</p>
+        <ul><li>Automated regression for enterprise workflow apps (Syngenta) with Selenium WebDriver and Katalon in C#, Java and Groovy.</li></ul>
+        <div class="tags"><span class="tag">Selenium</span><span class="tag">Katalon</span><span class="tag">C#</span><span class="tag">Java</span></div>
+      </article>
+      <article class="job rv">
+        <div class="job-h"><h3>Senior System Validation Engineer</h3><span class="when">Oct 2017 — Mar 2020</span></div>
+        <p class="org">El Sewedy Electrometer · 6th of October · Smart metering</p>
+        <ul>
+          <li>Validated DLMS smart-meter firmware and software for rollouts in Egypt, Lebanon and India, using manual testing plus Selenium (Python, C#).</li>
+          <li>Owned test plans and evaluation reports, and mentored junior QEs starting out in automation.</li>
+        </ul>
+      </article>
+      <article class="job rv">
+        <div class="job-h"><h3>Embedded Systems Developer &amp; Tester</h3><span class="when">Jun 2013 — Sep 2017</span></div>
+        <p class="org">Smart Cards Applications · Smart Village · Payments</p>
+        <ul><li>Developed and tested POS payment apps (PAX, SAND, VeriFone) for the national Ration, Bread and Flour subsidy programmes, working directly with the hardware team.</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="eyebrow">Selected projects</p>
+      <h2>Systems I've tested</h2>
+      <p class="lead">From warehouse SaaS to national payment terminals.</p>
+    </div>
+    <div class="projects">
+      <div class="proj rv"><p class="cat">Logistics SaaS</p><h3>Sirdab: B2B Logistics</h3><p>Playwright UI + API framework, MCP-driven exploratory test generation and release quality gates.</p><div class="tags"><span class="tag">Playwright</span><span class="tag">MCP</span></div></div>
+      <div class="proj rv"><p class="cat">EdTech</p><h3>Edugate: Education Platform</h3><p>End-to-end Playwright suites with AI-augmented test design and CI-gated releases.</p><div class="tags"><span class="tag">Playwright</span><span class="tag">LLM agents</span></div></div>
+      <div class="proj rv"><p class="cat">K-12 Learning</p><h3>Alef Platform</h3><p>Cypress regression automation for digital-learning web apps used by schools at national scale.</p><div class="tags"><span class="tag">Cypress</span></div></div>
+      <div class="proj rv"><p class="cat">Enterprise</p><h3>Syngenta GARF · ATP · RIMS</h3><p>Enterprise request workflows and reporting, automated with Katalon (Java/Groovy) and the ITWorx C# framework.</p><div class="tags"><span class="tag">Katalon</span><span class="tag">C#</span></div></div>
+      <div class="proj rv"><p class="cat">Energy · IoT</p><h3>DLMS Smart Meters</h3><p>Web and embedded smart-metering systems for Egypt, Lebanon and India, validated with Selenium (Python).</p><div class="tags"><span class="tag">Selenium</span><span class="tag">Embedded</span></div></div>
+      <div class="proj rv"><p class="cat">Payments</p><h3>National Subsidy POS</h3><p>Embedded payment apps on PAX, SAND and VeriFone terminals for the Ration, Bread and Flour programmes.</p><div class="tags"><span class="tag">POS</span><span class="tag">C</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="alt">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="eyebrow">Skills</p>
+      <h2>Toolbox</h2>
+    </div>
+    <div class="skills">
+      <div class="sk rv"><h3>AI in Testing</h3><div class="chips"><span class="chip">Playwright MCP</span><span class="chip">LLM agents</span><span class="chip">Claude</span><span class="chip">GitHub Copilot</span><span class="chip">AI test generation</span><span class="chip">Prompt engineering for QA</span><span class="chip">AI failure triage</span></div></div>
+      <div class="sk rv"><h3>Testing AI Systems</h3><div class="chips"><span class="chip">DeepEval</span><span class="chip">LLM &amp; RAG evaluation</span><span class="chip">Hallucination checks</span><span class="chip">Prompt-injection &amp; safety</span><span class="chip">Golden datasets</span></div></div>
+      <div class="sk rv"><h3>Test Automation</h3><div class="chips"><span class="chip">Playwright</span><span class="chip">Cypress</span><span class="chip">Selenium</span><span class="chip">Appium</span><span class="chip">Katalon</span><span class="chip">SHAFT</span><span class="chip">POM &amp; fixtures</span></div></div>
+      <div class="sk rv"><h3>API · Data · Performance</h3><div class="chips"><span class="chip">REST / JSON</span><span class="chip">Postman</span><span class="chip">SoapUI</span><span class="chip">Advanced SQL</span><span class="chip">JMeter</span><span class="chip">LoadRunner</span></div></div>
+      <div class="sk rv"><h3>Languages</h3><div class="chips"><span class="chip">TypeScript</span><span class="chip">JavaScript</span><span class="chip">Python</span><span class="chip">Java</span><span class="chip">C#</span><span class="chip">C</span></div></div>
+      <div class="sk rv"><h3>Process &amp; Tools</h3><div class="chips"><span class="chip">Agile / Scrum</span><span class="chip">Risk-based testing</span><span class="chip">CI/CD</span><span class="chip">Git</span><span class="chip">Jira</span><span class="chip">TestLink</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="approach">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="eyebrow">How I use AI in QA</p>
+      <h2>Three principles</h2>
+    </div>
+    <div class="princ">
+      <div class="pr rv"><span class="num">01</span><h3>Agents explore, humans decide</h3><p>AI drafts the tests. Engineers own what gets merged.</p></div>
+      <div class="pr rv"><span class="num">02</span><h3>Grounded generation</h3><p>MCP gives agents the real DOM and accessibility tree, so specs use stable, role-based locators.</p></div>
+      <div class="pr rv"><span class="num">03</span><h3>Measured trust</h3><p>AI output is reviewed, versioned and run in CI like any other code.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="certs" class="alt">
+  <div class="wrap two">
+    <div>
+      <div class="head rv" style="margin-bottom:28px"><p class="eyebrow">Certifications</p><h2>Credentials</h2></div>
+      <div class="certs">
+        <div class="cert rv"><b>ISTQB Certified Tester, Foundation</b><span>Code 170504041 · 2017</span></div>
+        <div class="cert rv"><b>ISTQB Agile Tester</b><span>Code 171012005 · 2017</span></div>
+        <div class="cert rv"><b>Back-End Testing, Advanced</b><span>Egypt FWD · Testing Track · 2023</span></div>
+        <div class="cert rv"><b>PMP Certification Training</b><span>Engineering Tracks · 2019</span></div>
+        <div class="cert rv"><b>Test Automation with Selenium</b><span>Test-PRO · 2017</span></div>
+        <div class="cert rv"><b>Test Automation with Coded UI</b><span>SECC · 2018</span></div>
+        <div class="cert rv"><b>Embedded Systems Diploma</b><span>2013 · plus CCNA, Linux, Oracle SQL</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="head rv" style="margin-bottom:28px"><p class="eyebrow">Education</p><h2>Degree</h2></div>
+      <div class="edu rv">
+        <h3>B.Sc. Communications &amp; Electronics Engineering</h3>
+        <p>Faculty of Engineering, Cairo University · 2010</p>
+        <p>Graduation project: Automated Broadcasting Wireless Vehicle</p>
+        <p><b class="grad-text">Grade: Excellent</b></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap rv">
+    <p class="eyebrow">Contact</p>
+    <h2>Let's build quality <span class="grad-text">together.</span></h2>
+    <p class="lead">Open to Senior SDET, QA Lead and AI-augmented QA roles, remote or on-site.</p>
+    <div class="cta">
+      <a class="btn primary" href="mailto:ahmed.asho@yahoo.com">ahmed.asho@yahoo.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/aashour" target="_blank" rel="noopener">linkedin.com/in/aashour</a>
+      <a class="btn" href="assets/Ahmed_Ashour_CV.pdf" download>Download CV</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> Ahmed Ashour Hussein</span>
+    <span class="mono">Hand-built and tested · hosted on GitHub Pages</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// theme toggle (remembered per browser)
+const root = document.documentElement, KEY = 'aa-theme';
+try { const t = localStorage.getItem(KEY); if (t) root.dataset.theme = t; } catch (e) {}
+document.getElementById('theme').addEventListener('click', () => {
+  const cur = root.dataset.theme || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  root.dataset.theme = cur === 'light' ? 'dark' : 'light';
+  try { localStorage.setItem(KEY, root.dataset.theme); } catch (e) {}
+});
+
+// scroll reveal
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+}), { threshold: .12 });
+document.querySelectorAll('.rv').forEach((el, i) => { el.style.transitionDelay = (i % 4) * 70 + 'ms'; io.observe(el); });
+</script>
+</body>
+</html>
